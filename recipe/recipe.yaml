@@ -1,5 +1,5 @@
 context:
-  version: "2.1.3"
+  version: "2.2.0"
 
 package:
   name: cadical
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/arminbiere/cadical/archive/refs/tags/rel-${{ version }}.tar.gz
-  sha256: abfe890aa4ccda7b8449c7ad41acb113cfb8e7e8fbf5e49369075f9b00d70465
+  sha256: 46694892c2d2ebc7a77cd33edb35c71c8bf92a5aae600f04fbb977b1c7824083
 
 build:
   number: 0
@@ -37,7 +37,7 @@ tests:
         - cadical
         - mobical
 
-  - script: 
+  - script:
       - cadical --version
   - script:
       - cadical simple.cnf > output.txt || EXIT_CODE=$?
@@ -48,7 +48,7 @@ tests:
       recipe:
         - simple.cnf
   - script:
-      - $CXX test.cpp $CXXFLAGS $LDFLAGS -I$PREFIX/include -lcadical -o test -std=c++11 
+      - $CXX test.cpp $CXXFLAGS $LDFLAGS -I$PREFIX/include -lcadical -o test -std=c++11
       - ./test
     files:
       recipe:
