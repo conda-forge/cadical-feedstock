@@ -1,5 +1,5 @@
 context:
-  version: "2.2.1"
+  version: "3.0.1"
 
 package:
   name: cadical
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/arminbiere/cadical/archive/refs/tags/rel-${{ version }}.tar.gz
-  sha256: 16d24cc143632b9990a3fbe062e2858d5dd9599a0f369dc02a40c2a76036f931
+  sha256: 0a8ea563b5a25f5aa064634814edab45cc0e45111ea0f5d412a565f806fd7e11
 
 build:
   number: 0
