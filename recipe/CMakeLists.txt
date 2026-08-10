@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.12)
-project(CaDiCaL VERSION 2.1.3 LANGUAGES CXX)
+
+if(NOT DEFINED CADICAL_VERSION)
+    set(CADICAL_VERSION "2.1.3")
+endif()
+project(CaDiCaL VERSION ${CADICAL_VERSION} LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -109,7 +113,7 @@ add_custom_command(
 add_custom_target(build_header DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/build.hpp)
 
 # Source files
-file(GLOB CADICAL_SOURCES "src/*.cpp")
+file(GLOB CADICAL_SOURCES "src/*.cpp" "src/*.c")
 list(REMOVE_ITEM CADICAL_SOURCES 
     "${CMAKE_CURRENT_SOURCE_DIR}/src/cadical.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/mobical.cpp")
